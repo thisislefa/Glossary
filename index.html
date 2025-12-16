@@ -1,0 +1,619 @@
+<style>
+        /* =============================================
+    TRENDING TERMS SECTION CSS (Updated for Responsiveness)
+    =============================================
+    */
+    .trending-terms-container {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0; /* Added desktop padding */
+        position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #121212;
+        margin: 0;
+    }
+    
+    .terms-wrapper {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        padding-bottom: 25px;
+        margin-bottom: 10px;
+    }
+
+    .terms-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    .terms-wrapper {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .term-card-sv {
+        flex: 0 0 360px; /* Desktop Card Size */
+        margin-right: 20px;
+        background-color: white;
+        border-radius: 12px;
+        padding: 30px 25px;
+        border: 1px solid #e0e0e0ab;
+        height: auto;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .term-card-sv h3 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e0e0e055;
+        padding-bottom: 10px;
+    }
+
+    .term-card-sv p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        padding-top: 10px;
+    }
+
+    .scroll-controls {
+        position: absolute;
+        bottom: -60px;
+        right: 50px; /* Aligned with desktop padding */
+        display: flex;
+        gap: 15px;
+    }
+
+    .scroll-btn {
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .scroll-btn:hover {
+        color: white;
+        border: 3px solid black;
+    }
+
+    .scroll-btn svg {
+        width: 40px;
+        height: 40px;
+        fill: currentColor;
+    }
+
+    /* Tablet/Smaller Desktop Styles (1024px) */
+    @media (max-width: 1024px) {
+        .trending-terms-container {
+            padding: 0 20px; /* Reduced padding for smaller screens */
+            margin: 40px auto;
+        }
+
+        .term-card-sv {
+            flex: 0 0 300px; /* Slightly smaller card size */
+            margin-right: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 1.75rem;
+        }
+
+        .scroll-controls {
+            bottom: -40px;
+            right: 20px;
+            gap: 10px;
+        }
+    }
+
+    /* Mobile Styles (600px) */
+    @media (max-width: 600px) {
+        .trending-terms-container {
+            padding: 0; /* Remove container padding to allow full width scrolling */
+            margin: 40px auto;
+        }
+        
+        .section-header {
+            padding: 0 20px; /* Apply padding only to header content */
+            margin-bottom: 15px;
+        }
+
+        .terms-wrapper {
+            /* Adjust wrapper to start scrolling from the edge, while creating a visual margin */
+            margin-left: 20px;
+            padding-right: 20px;
+            width: 100%;
+            padding-bottom: 15px;
+        }
+
+        .term-card-sv {
+            /* Make card take up 88% of the viewport width minus padding,
+               leaving a little space for the next card to peek in. */
+            flex: 0 0 88%; 
+            margin-right: 15px;
+        }
+        
+        .term-card-sv h3 {
+            font-size: 1.5rem;
+        }
+        .term-card-sv p {
+            font-size: 0.95rem;
+        }
+
+        /* Make scroll controls static and centered for mobile */
+        .scroll-controls {
+            position: static; 
+            margin-top: 15px;
+            margin-bottom: 10px;
+            justify-content: center;
+            right: auto;
+            bottom: auto;
+            transform: none;
+        }
+        
+        .scroll-btn {
+            width: 45px;
+            height: 45px;
+        }
+        .scroll-btn svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+</style>
+</head>
+<body>
+    
+
+    <section class="hero-section">
+        <div class="content-container">
+            <h1>Glossary</h1>
+            <p>Comprehensive definitions for technical terms you need to know.</p>
+        </div>
+    </section>
+
+<section class="trending-terms-container">
+    <div class="section-header">
+        <h2>Trending Terms</h2>
+    </div>
+
+    <div class="terms-wrapper" id="trendingTermsWrapper">
+        <div class="term-card-sv">
+            <h3>DevOps</h3>
+            <p>A set of practices, cultural philosophies, and tools that increases an organization's ability to deliver applications and services at high velocity. DevOps emphasizes collaboration between development and operations teams, automation of the software delivery pipeline, continuous integration and delivery, infrastructure as code, monitoring, and rapid feedback loops to improve reliability, quality, and time to market.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>Cloud Computing</h3>
+            <p>The delivery of computing services — servers, storage, databases, networking, software, analytics, and intelligence — over the internet (the cloud). Cloud computing provides on-demand resources, elasticity, and pay-as-you-go pricing, enabling faster innovation, easier scaling, reduced operational overhead, and the ability to run workloads globally without owning physical infrastructure.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>API</h3>
+            <p>Application Programming Interface. A set of rules, protocols, and tools that defines how software components should interact. APIs expose functionality and data from applications or services in a standardized way, enabling integration, automation, and modular development by allowing clients to request and manipulate resources without needing knowledge of internal implementation details.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>CI/CD Pipeline</h3>
+            <p>Continuous Integration (CI) and Continuous Delivery/Deployment (CD) are automated practices for building, testing, and delivering code changes. CI automates merging and testing of code in a shared repository to detect issues early. CD automates the packaging, staging, and deployment of changes so teams can release reliable software faster, often with automated testing, promotion gates, and rollback mechanisms.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>Microservices</h3>
+            <p>An architectural style that structures an application as a collection of small, independently deployable services, each responsible for a single business capability. Microservices communicate over lightweight protocols (e.g., HTTP/REST, gRPC, or messaging), enable decentralized data management, allow teams to iterate and scale independently, and improve resilience by isolating failures.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>Blockchain</h3>
+            <p>A distributed ledger technology that records transactions in an ordered, append-only chain of cryptographically linked blocks across a decentralized network of nodes. Blockchains provide immutability, tamper-resistance, and transparent audit trails; they can be permissionless (public) or permissioned (private) and are used for cryptocurrencies, smart contracts, and provenance or supply-chain applications.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>Latency</h3>
+            <p>The delay between initiating an action and observing its effect. In networking, latency is the time it takes for a packet to travel from source to destination, typically measured in milliseconds. Latency is influenced by propagation, transmission, processing, and queuing delays and is a critical metric for real-time applications such as gaming, video conferencing, and high-frequency trading.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>SaaS</h3>
+            <p>Software as a Service. A cloud delivery model where software applications are hosted by a provider and made available to customers over the internet, typically on a subscription or usage-based pricing model. SaaS removes the need for local installation and maintenance, centralizes updates and security, and enables quick onboarding and access from any device with a network connection.</p>
+        </div>
+        <div class="term-card-sv">
+            <h3>Artificial Intelligence</h3>
+            <p>The field of computer science focused on creating systems that perform tasks normally requiring human intelligence. AI encompasses machine learning, deep learning, natural language processing, computer vision, and reasoning techniques to enable machines to perceive, learn from data, make decisions, and perform tasks such as classification, prediction, planning, and language understanding.</p>
+        </div>
+    </div>
+
+    <div class="scroll-controls">
+        <button class="scroll-btn" id="scrollLeft">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 32 32"><path fill="#000000" d="M29 16a1 1 0 0 1-1 1H6.414l8.293 8.293a1 1 0 0 1-1.414 1.414l-10-10a1 1 0 0 1 0-1.414l10-10a1 1 0 1 1 1.414 1.414L6.414 15H28a1 1 0 0 1 1 1Z"/></svg>
+        </button>
+        <button class="scroll-btn" id="scrollRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 32 32"><path fill="#000000" d="M3 16a1 1 0 0 1 1-1h21.586l-8.293-8.293a1 1 0 0 1 1.414-1.414l10 10a1 1 0 0 1 0 1.414l-10 10a1 1 0 0 1-1.414-1.414L25.586 17H4a1 1 0 0 1-1-1Z"/></svg>
+        </button>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE TML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defcon - IT Solutions Glossary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-accent: #0080e1;
+            --color-accent-dark: #0070cc;
+            --color-text-dark: #1a1a1a;
+            --color-background-light: #f4f4f4;
+            --color-text-muted: #555566;
+            --header-height: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background-light);
+            color: var(--color-text-dark);
+            
+        }
+
+        .content-container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 20px 0;
+            background: #f4f4f4;
+            margin-top: var(--header-height);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #0091ff 0%, #0070cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #000;
+            background-clip: text;
+            margin-bottom: 1px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            max-width: 700px;
+        }
+
+        /* Main Layout */
+        .glossary-wrapper {
+            display: flex;
+            gap: 50px;
+            padding: 50px 0;
+            align-items: flex-start;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            /* === FIX: Make the entire sidebar sticky with no internal scrollbar === */
+            position: sticky;
+            top: 90px; /* Header height (60px) + 20px margin */
+        }
+
+        .alphabet-nav {
+            /* === FIX: Remove sticky from child, let parent control === */
+            /* position: sticky; */
+            /* top: calc(var(--header-height) + 30px); */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            background: transparent;
+            border-radius: 4px;
+        }
+
+        .alphabet-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 3px;
+            background-color: #fff;
+            color: #565f76;
+            text-decoration: none;
+            border: 1px solid #e0e0e0;
+        }
+
+        .alphabet-nav a:hover:not(.disabled) {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .alphabet-nav a.disabled {
+            color: #ccc;
+            cursor: default;
+            background-color: #fafbfc;
+        }
+
+        .alphabet-nav a.active-letter {
+            background-color: var(--color-accent);
+            color: white;
+            
+        }
+
+        /* Search Box */
+        .search-box {
+            margin-bottom: 20px;
+            /* === FIX: Remove sticky from child, let parent control === */
+            /* position: sticky; */
+            /* top: calc(var(--header-height) + 30px); */
+            z-index: 10;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            background-color: white;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(0, 145, 255, 0.1);
+        }
+
+        /* Terms Container */
+        .terms-container {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Term Group */
+        .term-group {
+            margin-bottom: 60px;
+        }
+
+        .term-group-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .term-group-header h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            letter-spacing: -0.02em;
+            min-width: 80px;
+        }
+
+        .term-group-header span {
+            font-size: 0.9rem;
+            background-color: var(--color-accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Term Grid */
+        .term-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 12px;
+        }
+
+        .term-card {
+            background: white;
+            padding: 24px;
+            border-radius: 3px;
+            border: 1px solid #e8e8e8;
+            cursor: pointer;
+        }
+
+        .term-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .term-card h3 i {
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            opacity: 0.6;
+        }
+
+        .term-card p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 1200px) {
+            .term-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .glossary-wrapper {
+                flex-direction: column;
+                gap: 30px;
+                padding: 30px 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                /* Undo sticky behavior for mobile */
+                position: static;
+            }
+
+            .alphabet-nav {
+                position: static;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 6px;
+                padding: 15px;
+            }
+
+            .alphabet-nav a {
+                padding: 8px 4px;
+                font-size: 0.85rem;
+            }
+
+            .search-box {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .term-group-header h2 {
+                font-size: 2rem;
+            }
+
+            .content-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 30px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .term-group-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .term-card {
+                padding: 16px;
+            }
+
+            .term-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .alphabet-nav {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            background-color: white;
+            margin-top: 80px;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <section class="pb-20">
+        <div class="content-container">
+            <span style="font-size: 2rem; font-weight: 700;">Glossary A to Z</span>
+            <div class="glossary-wrapper">
+                <aside class="sidebar">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search terms...">
+                    </div>
+                    <nav class="alphabet-nav" id="alphabetIndex"></nav>
+                </aside>
+
+                <main class="terms-container" id="glossaryTermsContainer"></main>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content-container">
+            <p>&copy; 2025 Glossary. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="trending-terms.js"></script>
+    <script src="terms.js"></script>
+</body>
+</html>
