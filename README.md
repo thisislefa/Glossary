@@ -6,7 +6,9 @@
 
 A sophisticated, interactive technical glossary website featuring alphabetical navigation, real-time search functionality, and a trending terms carousel. Built with vanilla JavaScript, modern CSS (Grid/Flexbox), and a clean, responsive design. This project serves as a demo for a comprehensive IT solutions glossary with over 120 technical terms.
 
-**Live Preview:** [View Glossary](https://thisislefa.github.io/Glossary)
+## Live Deployment
+
+[View Glossary](https://thisislefa.github.io/Glossary)
 
 
 ## Project Structure
