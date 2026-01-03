@@ -8,7 +8,7 @@ A sophisticated, interactive technical glossary website featuring alphabetical n
 
 ## Live Deployment
 
-[View Glossary](https://thisislefa.github.io/Glossary)
+[View Glossary](https://lefajmofokeng.github.io/Glossary)
 
 
 ## Project Structure
